@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: support-service
+server:
+  port: 7081
+  servlet:
+    context-path: /support-service/
+eureka:
+  client:
+    serviceUrl:
+      defaultZone : http://localhost:8888/eureka/

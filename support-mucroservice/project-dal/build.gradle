@@ -1,0 +1,6 @@
+
+
+dependencies {
+    compile project(':project-common')
+    // 依赖mybatis组件
+}

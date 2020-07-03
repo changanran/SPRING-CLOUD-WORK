@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: app-web
+server:
+  port: 6083
+  servlet:
+    context-path: /app-web/
+eureka:
+  client:
+    serviceUrl:
+      defaultZone : http://localhost:8888/eureka/

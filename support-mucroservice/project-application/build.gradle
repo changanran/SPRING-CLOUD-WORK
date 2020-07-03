@@ -1,0 +1,12 @@
+
+dependencies {
+    compile project(':project-provider')
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    compile 'org.springframework.cloud:spring-cloud-starter-config'
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+    compile 'org.springframework.cloud:spring-cloud-context'
+}
+jar{
+    archiveName = 'support.jar'
+}

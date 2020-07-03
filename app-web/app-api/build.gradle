@@ -1,0 +1,4 @@
+
+dependencies {
+    compile 'cn.com.rx:common-base:0.0.1'
+}

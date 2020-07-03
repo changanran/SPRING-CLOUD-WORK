@@ -1,0 +1,65 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.4.RELEASE'
+		dependencyMannagementVersion='1.0.8.RELEASE'
+	}
+	repositories {
+		//mavenCentral()
+		maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+	}
+	dependencies{
+		classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+		classpath "io.spring.gradle:dependency-management-plugin:${dependencyMannagementVersion}"
+
+	}
+}
+
+subprojects{
+
+	apply plugin: 'java'
+	//apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
+	group = 'cn.com.rx'
+	version = '0.0.1-SNAPSHOT'
+	sourceCompatibility = '1.8'
+	targetCompatibility = '1.8'
+
+	[compileJava,compileTestJava]*.options*.encoding ='UTF-8'
+	repositories {
+		maven {
+			url 'https://maven.aliyun.com/repository/public'
+		}
+		maven {
+			credentials {
+				username 'tTlTgh'
+				password 'A54GDdPwiA'
+			}
+			url 'https://repo.rdc.aliyun.com/repository/132190-release-Fbhmga'
+		}
+		maven {
+			credentials {
+				username 'tTlTgh'
+				password 'A54GDdPwiA'
+			}
+			url 'https://repo.rdc.aliyun.com/repository/132190-snapshot-sgtm5j'
+		}
+	}
+
+	dependencyManagement {
+		imports {
+			mavenBom "org.springframework.boot:spring-boot-starter-parent:2.0.4.RELEASE"
+			mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Finchley.SR1'
+		}
+	}
+
+	dependencies {
+//	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+//		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+//	}
+}
+
+}
+
+//task wrapper(type: Wrapper) {
+//	gradleVersion = "5.5"  //这里的版本根据自己的需求变更.
+//}

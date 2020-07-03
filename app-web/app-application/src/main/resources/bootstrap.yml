@@ -1,0 +1,28 @@
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: pro
+  application:
+    name: app-web
+  cloud:
+    config:
+      uri: http://localhost:3333
+      label: master
+      profile: pro
+
+
+---
+spring:
+  profiles: dev
+  application:
+    name: app-web
+  cloud:
+    config:
+      uri: http://localhost:3333
+      label: master
+      profile: dev
+
+      # cloud.config.uri

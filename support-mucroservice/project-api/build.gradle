@@ -1,0 +1,31 @@
+apply plugin: 'maven'
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+apply plugin: 'org.springframework.boot'
+mainClassName = 'cn.com.rx.SupportMucroserviceApplication'
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            pom.version = "0.0.6"
+            pom.artifactId = "support-api"
+            pom.groupId = "cn.com.rx"
+            repository(url: 'https://repo.rdc.aliyun.com/repository/132190-release-Fbhmga/') {
+                authentication(userName: 'tTlTgh', password: 'A54GDdPwiA')
+            }
+            snapshotRepository(url: 'https://repo.rdc.aliyun.com/repository/132190-snapshot-sgtm5j/') {
+                authentication(userName: 'tTlTgh', password: 'A54GDdPwiA')
+            }
+
+        }
+    }
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'cn.com.rx:common-base:0.0.2'
+
+}
+task wrapper(type: Wrapper) {
+    gradleVersion = "5.5"  //这里的版本根据自己的需求变更.
+}

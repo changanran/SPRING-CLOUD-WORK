@@ -1,0 +1,7 @@
+apply  plugin: 'java'
+apply plugin: 'org.springframework.boot'
+dependencies {
+    compile project(':project-provider')
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
+

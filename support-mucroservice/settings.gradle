@@ -1,0 +1,11 @@
+rootProject.name = 'support-mucroservice'
+include 'project-api'
+include 'project-service'
+include 'project-common'
+include 'project-dal'
+include 'project-remote'
+include 'project-domain'
+include 'project-provider'
+include 'project-application'
+include 'project-test'
+
